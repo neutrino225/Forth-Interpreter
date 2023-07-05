@@ -1,24 +1,22 @@
 /** @format */
-
-type inputType = string | number;
-
+type INPUT = string | number;
 export class Stack {
-	public storage: inputType[] = [];
+	public storage: INPUT[] = [];
 
 	constructor(private capacity: number = Infinity) {}
 
-	push(item: inputType): void {
+	push(item: INPUT): void {
 		if (this.size() === this.capacity) {
 			throw Error("Stack has reached max capacity, you cannot add more items");
 		}
 		this.storage.push(item);
 	}
 
-	pop(): inputType | undefined {
+	pop(): INPUT {
 		return this.storage.pop();
 	}
 
-	peek(): inputType | undefined {
+	peek(): INPUT {
 		return this.storage[this.size() - 1];
 	}
 
